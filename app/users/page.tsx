@@ -8,10 +8,12 @@ export const metadata: Metadata = {
 export default async function UsersPage() {
   const usersData: Promise<User[]> = GetAllUsers();
   const users = await usersData;
-  const content = (
+  return (
     <section>
       <h2>
-        <Link href="/" className="text-red-700 font-bold">Go back home</Link>
+        <Link href="/" className="text-red-700 font-bold">
+          Go back home
+        </Link>
       </h2>
       <br />
       {users.map((user) => {
@@ -25,5 +27,4 @@ export default async function UsersPage() {
       })}
     </section>
   );
-  return content;
 }

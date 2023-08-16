@@ -5,12 +5,11 @@ type Props = {
 export default async function UserPost({ promise }: Props) {
   const posts = await promise;
 
-  const content = posts.map((post) => {
+  return posts.map((post) => (
     <article key={post.id}>
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
+      <h2 className="text-orange-200">{post.title}</h2>
+      <p className="text-emerald-300">{post.body}</p>
       <br />
-    </article>;
-  });
-  return content;
+    </article>
+  ));
 }
