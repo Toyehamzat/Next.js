@@ -18,8 +18,8 @@ export default async function UsersPage() {
       <br />
       {users.map((user) => {
         return (
-          <div className="flex flex-col mb-4 ">
-            <p key={user.id}>
+          <div key={user.id} className="flex flex-col mb-4 ">
+            <p>
               <Link href={`/users/${user.id}`}>{user.name}</Link>
             </p>
           </div>

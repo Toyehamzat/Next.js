@@ -1,6 +1,6 @@
 export default async function GetUser(userId:string){
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
 
-  if (!res.ok) throw new Error("Could not fetch user");
+  if (!res.ok) return undefined;
   return res.json();
 }
